@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", Helvetica, sans-serif;
+}
+
+.buttonB {
+  @apply bg-black-1 hover:bg-green-3 hover:border-green-3 text-white-1 text-center border rounded-lg-exten border-black-1 px-4 py-2;
+}
+
+.buttonBM {
+  @apply bg-black-1 mr-5 hover:bg-green-3 hover:border-green-3 text-white-1 text-center border rounded-lg-exten border-black-1 px-4 py-2;
+}
+
+.buttonA {
+  @apply border border-black-1 hover:border-green-3 hover:text-green-3 rounded-lg-exten text-black-1 text-center bg-opacity-0 py-2 px-4;
+}
+
+.inputA {
+  @apply min-h-[2.75rem] mt-6 bg-transparent outline-none  border text-gray-5 border-gray-4 rounded-lg-exten py-[0.5rem] px-[0.75rem];
+}
+
+.buttonA2 {
+  @apply border border-black-1 rounded-lg-exten text-black-1 text-center bg-opacity-0 py-3 px-5;
+}
+
+.buttonB2 {
+  @apply bg-black-1 text-white-1 text-center border rounded-lg-exten border-black-1 py-3 px-5;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
