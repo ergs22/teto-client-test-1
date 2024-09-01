@@ -109,7 +109,7 @@ export default function Page() {
                 {errors.password && (
                     <span className="text-red-600 text-left">
                         {errors.password?.type === 'required' && 'Este campo es obligatorio'}
-                        {errors.password?.type === 'pattern' && 'La contraseña debe tener mayúsculas, minúsculas, números y un carácter especial'}
+                        {errors.password?.type === 'pattern' && 'La contraseña debe tener mayúsculas, minúsculas, números y un carácter especial (@$!%*?&#)'}
                         {errors.password?.type === 'minLength' && 'La contraseña debe tener minimo 8 caracteres'}
 
                     </span>

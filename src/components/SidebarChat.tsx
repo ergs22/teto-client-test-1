@@ -28,7 +28,7 @@ const SidebarChat = () => {
     const logout = async () => {
         try {
             await axios.get('/api/users/logout')
-            toast.success("Logout successfull")
+            toast.success("Salida efectuada")
             router.push("/login")
         } catch (error: any) {
             toast.error(error.message)
