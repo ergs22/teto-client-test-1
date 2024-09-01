@@ -33,6 +33,7 @@ export default function VerifyEmailPage() {
             router.push("/chat")
         }
     }, [token])
+
     return (
         <section className=" text-black flex bg-hero-pattern bg-size-hero bg-position-hero flex-col items-center pt-8 justify-start min-h-screen ">
             <h1 className="text-4xl px-6 sm:px-0">Verifique su correo electronico</h1>

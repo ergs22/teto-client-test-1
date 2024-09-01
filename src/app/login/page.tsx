@@ -79,7 +79,7 @@ export default function Page() {
             </div> */}
 
 
-            <Link href="#">
+            <Link href="/reset-password">
                 <p className="mt-4 underline text-black-3">¿Olvidaste tu contraseña?</p>
             </Link>
 
