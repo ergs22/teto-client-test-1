@@ -65,7 +65,7 @@ export default function Page() {
                         <p>¿No tienes una cuenta?<Link href="/signup" className="underline"> Únete</Link></p>
                     </div>
                     <div className="w-full flex justify-center items-center mt-4">
-                        <Link href="/recover-password" className="underline">¿Olvidaste tu contraseña?</Link>
+                        <Link href="/reset-password" className="underline">¿Olvidaste tu contraseña?</Link>
                     </div>
                 </div>
             </div>

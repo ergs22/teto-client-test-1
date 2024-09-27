@@ -4,15 +4,15 @@ const Footer = () => {
     return (
         <footer className="p-5% py-16">
             <section className=" flex justify-around items-center">
-                <div><Image alt="logo" src="/images/logo-1.png" height={150} width={150} /></div>
+                <div> <Link href="/"><Image alt="logo" src="/images/logo-1.png" height={150} width={150} /></Link></div>
                 <div className="hidden md:flex">
-                    <Link href="#case-use">  <h1 className=" text-black-2 text-base font-bold hover:text-green-3">Caso uso</h1></Link>
+                    <Link href="#about-us"><h1 className=" text-black-2 text-base font-bold hover:text-green-3">Sobre teto</h1></Link>
+                </div>
+                <div className="hidden md:flex">
+                    <Link href="#case-use">  <h1 className=" text-black-2 text-base font-bold hover:text-green-3">Casos de uso</h1></Link>
                 </div>
                 <div className="hidden md:flex">
                     <Link href="#experience"> <h1 className=" text-black-2 text-base font-bold hover:text-green-3">Experiencia</h1></Link>
-                </div>
-                <div className="hidden md:flex">
-                    <Link href="#about-us"><h1 className=" text-black-2 text-base font-bold hover:text-green-3">Sobre nosotros</h1></Link>
                 </div>
                 <div className="hidden md:flex">
                     <Link href="#FQAs"><h1 className=" text-black-2 text-base font-bold hover:text-green-3">FQAs</h1></Link>

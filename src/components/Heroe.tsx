@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 const Heroe = () => {
     const title = "Tetobot,el mejor ";
-    const titleC = "acompañante virtual.";
-    const parraf = "Acompañamiento emocional a tu alcance. Teto, es un compañero virtual diseñado para escucharte, comprenderte y ofrecerte estrategias prácticas para manejar la ansiedad."
+    const titleC = "acompañante virtual";
+    const parraf = "Acompañamiento emocional a tu alcance. Teto, es un compañero virtual diseñado para escucharte, comprenderte y ofrecerte estrategias prácticas para manejar la ansiedad"
     return (
         <section id="about-us" className=" bg-hero-pattern bg-size-hero bg-position-hero flex justify-center items-center p-section">
             <div className=" flex items-center ">

@@ -1,15 +1,17 @@
 import CardFAQ from "./CardFAQ";
 const FAQ = () => {
-    const datab = [{ title: "¿Qué es un chatbot?", parraf: "Es una herramienta que automatiza respuestas a consultas repetitivas, brindando información rápida y accesible a los usuarios" },
-    { title: "¿Cómo puede ayudar un chatbot a manejar un ataque de ansiedad?", parraf: "Proporcionando técnicas de respiración, consejos para la relajación y recursos para gestionar un ataque de ansiedad" },
-    { title: "¿Qué tipo de preguntas puede responder?", parraf: "Preguntas frecuentes sobre ansiedad puede abordar consultas sobre síntomas de ansiedad, técnicas de manejo del estrés, recursos de apoyo, información sobre trastornos de ansiedad comunes, entre otros" },
-    { title: "¿Sustituye la terapia?", parraf: "No, no pueden reemplazar la terapia tradicional. Aunque pueden ser una herramienta complementaria útil" },
-    { title: "¿Sustituye a un profesional de la salud mental?", parraf: "No, no pueden reemplazar a los profesionales de la salud mental. Si bien los chatbots pueden brindar apoyo, no pueden diagnosticar, tratar o hacer un seguimiento de condiciones de salud mental complejas" }]
+    const datab = [{ title: "¿Cómo se define un chatbot?", parraf: "Un chatbot es un programa de inteligencia artificial diseñado para simular conversaciones con usuarios a través de texto o voz. Su función principal es automatizar la comunicación, proporcionando respuestas rápidas y eficaces a preguntas frecuentes y ayudando en tareas específicas." },
+    {
+        title: "¿De qué manera puede un chatbot ayudar a gestionar un ataque de ansiedad?", parraf: "Un chatbot puede ayudar a gestionar un ataque de ansiedad proporcionando apoyo inmediato y accesible, guiando al usuario a través de técnicas de respiración y ejercicios de atención plena para calmar la mente y el cuerpo."
+    },
+    { title: "¿Qué tipo de preguntas puede responder Tetobot?", parraf: "Tetobot puede responder a diversas preguntas relacionadas con la ansiedad, tales como síntomas comunes, técnicas de manejo del estrés y recursos de apoyo. Además, proporciona información sobre los trastornos de ansiedad más frecuentes, ofreciendo orientación para ayudar a los usuarios a entender y gestionar mejor su situación." },
+    { title: "¿Puede un chatbot reemplazar la terapia psicológica?", parraf: "No, un chatbot no puede reemplazar la terapia psicológica. Aunque puede ser una herramienta complementaria útil." },
+    { title: "¿Puede un chatbot reemplazar a un psicólogo o psiquiatra?", parraf: "No, un chatbot no puede sustituir a un psicólogo o psiquiatra. Si bien puede ofrecer apoyo general y consejos, no tiene la habilidad de realizar evaluaciones clínicas, ni establecer diagnósticos." }]
 
     return (
         <section id="FQAs" className=" p-5% py-16 flex flex-col items-center">
             <h1 className=" text-black-1 text-[2.5rem] font-medium">Preguntas frecuentes</h1>
-            <p>Si tienes alguna, aquí encontrarás respuestas a algunas de las consultas más comunes</p>
+            <p>Aquí encontrarás respuestas a algunas de las consultas más comunes</p>
 
             <div className=" mt-8 ">
                 {datab.map((el, index) => (

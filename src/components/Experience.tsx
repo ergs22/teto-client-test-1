@@ -43,7 +43,7 @@ const Experience = () => {
     return (
         <section id="experience" className=" p-5% py-16 flex flex-col items-center">
             <h1 className=" text-black-1 text-[2.5rem] font-medium">Experiencia de primer nivel</h1>
-            <p>Tetobot se dedica a brindarte la mejor experiencia posible.</p>
+            <p>Tetobot se dedica a brindarte la mejor experiencia posible</p>
 
             <div className=" columns-1 mt-8 gap-8 sm:columns-2 md:columns-3">
                 {users.map((el, index) =>
