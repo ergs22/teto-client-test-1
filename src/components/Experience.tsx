@@ -41,7 +41,7 @@ const Experience = () => {
         img: "/images/profile-picture-1.png"
     }]
     return (
-        <section id="experience" className=" p-section flex flex-col items-center">
+        <section id="experience" className=" p-5% py-16 flex flex-col items-center">
             <h1 className=" text-black-1 text-[2.5rem] font-medium">Experiencia de primer nivel</h1>
             <p>Tetobot se dedica a brindarte la mejor experiencia posible.</p>
 

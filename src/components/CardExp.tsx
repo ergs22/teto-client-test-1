@@ -7,7 +7,7 @@ const CardExp = ({ name, country, parraf, img }: CardExpProps) => {
             <p>{parraf}</p>
             <div className=" flex mt-6">
                 <div className=" mr-4 rounded-full">
-                    <Image width={35} height={35} alt="profile-picture" className=" rounded-full w-[48px] h-[48px] object-cover" src={img} />
+                    <Image width={100} height={100} quality={100} alt="profile-picture" className=" rounded-full w-[48px] h-[48px] object-cover" src={img} />
                 </div>
                 <div>
                     <h3 className=" font-semibold">{name}</h3>

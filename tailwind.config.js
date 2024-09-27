@@ -39,7 +39,8 @@ module.exports = {
         "hero-pattern":
           "url('/images/6528caed853fb452ff2997e7_Ellipse.png'), linear-gradient(to bottom, #B8ECD1, #BDFFF3)",
         hero: "linear-gradient(to bottom, #B8ECD1, #BDFFF3)",
-        "hero-2": "linear-gradient(to bottom, #BDFFF3, #FFFFFF)",
+        "hero-2":
+          "linear-gradient(to bottom, #BDFFF3 40%, #BDFFF3 40%, #FFFFFF 100%)",
       },
       backgroundPosition: {
         "position-hero": "0px",

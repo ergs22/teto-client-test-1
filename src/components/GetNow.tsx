@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const GetNow = () => {
     return (
-        <section className="w-screen p-section">
+        <section className="w-screen p-5% py-16 ">
             <div className="bg-hero-pattern rounded-xl-exten bg-size-hero bg-position-hero flex justify-center p-section">
                 <div className="w-[70vw] text-center">
                     <h1 className=" text-5xl md:text-5-5-xl font-5-5-xl leading-5-5-xl">Tu compañero virtual para tu

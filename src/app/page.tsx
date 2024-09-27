@@ -16,7 +16,7 @@ export default function Home() {
           <NavBar />
           <Heroe />
         </header>
-        <div className="py-[7%] h-[7%] w-full bg-hero-2"></div>
+        <div className="py-[4%] w-full bg-hero-2"></div>
         <main className="overflow-hidden">
           <UseCase />
           <Experience />

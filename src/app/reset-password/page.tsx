@@ -33,10 +33,8 @@ export default function Page() {
     };
 
     const onRequestReset = async () => {
-        console.log("onRequestReset")
         try {
             setLoading(true);
-            console.log("onRequestReset-email:", user.email)
 
             const response = await axios.post("/api/users/request-reset-password", {
                 email: user.email,
@@ -56,7 +54,6 @@ export default function Page() {
     };
 
     const onResetPassword = async () => {
-        console.log("onResetPassword")
 
         if (user.newPassword !== user.renewPassword) {
             toast.error("Las contraseñas no coinciden.");
@@ -64,7 +61,6 @@ export default function Page() {
         }
         try {
             setLoading(true);
-            console.log("token,newPassword:", token, user.newPassword)
 
             const response = await axios.post("/api/users/reset-password", {
                 token,

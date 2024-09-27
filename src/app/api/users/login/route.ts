@@ -26,6 +26,7 @@ export async function POST(request: NextRequest) {
       id: user._id,
       username: user.username,
       email: user.email,
+      isVerified: user.isVerified,
     };
     const token = jwt.sign(tokenData, process.env.JWT_SECRET_KEY!, {
       expiresIn: "1h",

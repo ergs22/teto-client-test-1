@@ -21,12 +21,6 @@ const UseCase = () => {
 
     }
         , {
-        title: "Identificar T.A",
-        parraf: "Identificar Trastornos de Ansiedad utilizando cuestionarios y preguntas basadas en criterios clínicos.",
-        img: '/icons/identificar.png'
-
-    }
-        , {
         title: "Psicoeducación",
         parraf: "Explicación de conceptos clave de una manera accesible y fácil de entender.",
         img: '/icons/education.png'
@@ -41,7 +35,7 @@ const UseCase = () => {
     return (
         <section id="case-use" className=" p-5% flex flex-col items-center">
             <h1 className=" text-black-1 text-[2.5rem] mb-8 font-medium">Te ofrecemos</h1>
-            <div className="flex flex-wrap justify-between">
+            <div className="flex flex-wrap justify-center">
                 {data.map((el, index) =>
                     <CardUse title={el.title} parraf={el.parraf} key={index} img={el.img} />)
                 }

@@ -7,7 +7,7 @@ const FAQ = () => {
     { title: "¿Sustituye a un profesional de la salud mental?", parraf: "No, no pueden reemplazar a los profesionales de la salud mental. Si bien los chatbots pueden brindar apoyo, no pueden diagnosticar, tratar o hacer un seguimiento de condiciones de salud mental complejas" }]
 
     return (
-        <section id="FQAs" className=" p-section flex flex-col items-center">
+        <section id="FQAs" className=" p-5% py-16 flex flex-col items-center">
             <h1 className=" text-black-1 text-[2.5rem] font-medium">Preguntas frecuentes</h1>
             <p>Si tienes alguna, aquí encontrarás respuestas a algunas de las consultas más comunes</p>
 

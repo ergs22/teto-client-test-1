@@ -19,7 +19,7 @@ const CardFAQ = ({ name, info }: CardFAQProps) => {
                 <p className={`transition-transform duration-500 ease-in-out transform ${isOpen ? 'block' : 'hidden'} `}> {info} </p>
             </div>
             <span className="w-[32px] h-[32px]" onClick={handleClick}>
-                <Image className={`cursor-pointer transition-transform duration-500 ease-in-out transform ${isOpen ? 'rotate-45' : '-rotate-30'}`} src="/icons/show.png" alt="show" height={35} width={35} />
+                <Image className={`cursor-pointer transition-transform duration-500 ease-in-out transform ${isOpen ? 'rotate-45' : '-rotate-30'}`} src="/icons/show.png" alt="show" height={100} width={100} quality={100} />
             </span>
         </div>
     )
