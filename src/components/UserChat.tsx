@@ -12,7 +12,7 @@ const UserChat = ({ respon }: BotChatPros) => {
                 alt="profile-picture"
                 width={40}
                 height={40}
-                className="object-cover w-full h-full"
+                className="object-cover w-auto h-auto"
             />
         </div>
     </div>)

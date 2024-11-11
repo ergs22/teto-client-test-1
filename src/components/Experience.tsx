@@ -42,12 +42,19 @@ const Experience = () => {
     }]
     return (
         <section id="experience" className=" p-5% py-16 flex flex-col items-center">
-            <h1 className=" text-black-1 text-[2.5rem] font-medium">Experiencia de primer nivel</h1>
-            <p>Tetobot se dedica a brindarte la mejor experiencia posible</p>
+            <h1 data-aos="fade-up" className=" text-black-1 text-[2.5rem] font-medium">Experiencia de <span className=" text-green-3"> primer nivel</span></h1>
+            <p data-aos="fade-up">Tetobot se dedica a brindarte la mejor experiencia posible</p>
 
             <div className=" columns-1 mt-8 gap-8 sm:columns-2 md:columns-3">
                 {users.map((el, index) =>
-                    <CardExp parraf={el.parraf} key={index} name={el.name} country={el.pais} img={el.img} />
+
+                    <div
+                        key={index}
+                        data-aos="fade-up"
+                        data-aos-delay={index * 100} // Incrementa el delay por cada elemento
+                    >
+                        <CardExp parraf={el.parraf} key={index} name={el.name} country={el.pais} img={el.img} />
+                    </div>
                 )}
 
             </div>

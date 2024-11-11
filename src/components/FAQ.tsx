@@ -10,10 +10,10 @@ const FAQ = () => {
 
     return (
         <section id="FQAs" className=" p-5% py-16 flex flex-col items-center">
-            <h1 className=" text-black-1 text-[2.5rem] font-medium">Preguntas frecuentes</h1>
+            <h1 className=" text-black-1 text-[2.5rem] font-medium">Preguntas <span className=" text-green-3">frecuentes</span></h1>
             <p>Aquí encontrarás respuestas a algunas de las consultas más comunes</p>
 
-            <div className=" mt-8 ">
+            <div className=" mt-8 w-[90vw] flex flex-col items-center">
                 {datab.map((el, index) => (
                     <CardFAQ key={index} info={el.parraf} name={el.title} />
                 ))}

@@ -91,7 +91,7 @@ export default function Page() {
                     <Image alt="logo" height={150} width={150} src="/images/logo-1.png" />
                 </Link>
             </div>
-            <div className="bg-hero w-[85vw] sm:w-[70vw] lg:w-[40vw] px-2 sm:px-8 lg:px-8 py-8 min-h-[50vh] mx-auto mt-20 flex flex-col items-center justify-around text-center">
+            <div className="bg-hero-1 w-[85vw] sm:w-[70vw] lg:w-[40vw] px-2 sm:px-8 lg:px-8 py-8 h-[18rem] mx-auto mt-20 flex flex-col items-center justify-around text-center">
                 <h1 className="text-xl md:text-2xl font-medium">Recuperar contraseña</h1>
                 <div className="flex flex-col w-full">
                     {token.length <= 0 ? (

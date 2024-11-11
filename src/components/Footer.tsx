@@ -2,17 +2,18 @@ import Image from "next/image"
 import Link from "next/link"
 const Footer = () => {
     return (
-        <footer className="p-5% py-16">
+        <footer className="p-5% pt-16 pb-6">
             <section className=" flex justify-around items-center">
                 <div> <Link href="/"><Image alt="logo" src="/images/logo-1.png" height={150} width={150} /></Link></div>
                 <div className="hidden md:flex">
                     <Link href="#about-us"><h1 className=" text-black-2 text-base font-bold hover:text-green-3">Sobre teto</h1></Link>
                 </div>
+
                 <div className="hidden md:flex">
-                    <Link href="#case-use">  <h1 className=" text-black-2 text-base font-bold hover:text-green-3">Casos de uso</h1></Link>
+                    <Link href="#case-use">  <h1 className=" text-black-2 text-base font-bold hover:text-green-3">Cómo puede ayudarte</h1></Link>
                 </div>
                 <div className="hidden md:flex">
-                    <Link href="#experience"> <h1 className=" text-black-2 text-base font-bold hover:text-green-3">Experiencia</h1></Link>
+                    <Link href="#experience"> <h1 className=" text-black-2 text-base font-bold hover:text-green-3">Testimonios</h1></Link>
                 </div>
                 <div className="hidden md:flex">
                     <Link href="#FQAs"><h1 className=" text-black-2 text-base font-bold hover:text-green-3">FQAs</h1></Link>

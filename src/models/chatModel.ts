@@ -6,6 +6,7 @@ const chatSchema = new mongoose.Schema({
     ref: "User",
     required: [true, "Path `userId` is required."],
   },
+
   date: {
     type: String, // Store dates as strings in the format 'YYYY-MM-DD'
     required: [true, "Path `date` is required."],

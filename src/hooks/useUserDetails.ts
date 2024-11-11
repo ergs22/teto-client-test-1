@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Router, UserData } from "@/types/types";
 
 // Hook personalizado para obtener los detalles del usuario
-const useUserDetails = (router: any) => {
-  const [userData, setUserData] = useState({
+const useUserDetails = (router: Router) => {
+  const [userData, setUserData] = useState<UserData>({
     _id: "",
     username: "",
     fullname: "",

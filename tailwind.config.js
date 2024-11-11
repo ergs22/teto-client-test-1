@@ -19,6 +19,8 @@ module.exports = {
         "gray-3": "#F9F9F9",
         "gray-4": "#979797",
         "gray-5": "#555d6a",
+        "gray-6": "#b4b4b4",
+        "gray-7": "#D9D9D9",
         "misty-rose-1": "#f2dbd7",
         "lavender-1": "#ded6fe",
         "violette-1": "#723cdc",
@@ -37,10 +39,15 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern":
-          "url('/images/6528caed853fb452ff2997e7_Ellipse.png'), linear-gradient(to bottom, #B8ECD1, #BDFFF3)",
-        hero: "linear-gradient(to bottom, #B8ECD1, #BDFFF3)",
+          "url('/images/6528caed853fb452ff2997e7_Ellipse.png'), linear-gradient(to bottom, #B8ECD1, #A0E1FF)",
         "hero-2":
-          "linear-gradient(to bottom, #BDFFF3 40%, #BDFFF3 40%, #FFFFFF 100%)",
+          "linear-gradient(to bottom, #A0E1FF 10%, #C8F0FF 50%, #FFFFFF 100%)",
+        "hero-pattern-2":
+          "url('/images/6528caed853fb452ff2997e7_Ellipse.png'), linear-gradient(to bottom, #B8ECD1, #BDFFF3)",
+        "hero-2-2":
+          "linear-gradient(to bottom, #B8ECD1 10%, #BDFFF3 50%, #FFFFFF 100%)",
+        hero: "linear-gradient(to bottom, #B8ECD1, #BDFFF3)",
+        "hero-1": "linear-gradient(to bottom, #B8ECD1, #A0E1FF)",
       },
       backgroundPosition: {
         "position-hero": "0px",

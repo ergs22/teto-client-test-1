@@ -1,39 +1,38 @@
 "use client";
 
-import React, { createContext, useState, useContext, ReactNode } from "react";
+import React, { createContext, useState, useContext } from "react";
 
 type ModalContextType = {
-  isOpen: boolean;
-  openModal: () => void;
+  activeModal: string | null; // Guarda el nombre del modal activo
+  openModal: (modalName: string) => void;
   closeModal: () => void;
 };
 
 const initialModalContext: ModalContextType = {
-  isOpen: false,
+  activeModal: null, // Inicialmente no hay modal activo
   openModal: () => { },
   closeModal: () => { },
 };
 
-export const ModalContext =
-  createContext<ModalContextType>(initialModalContext);
+export const ModalContext = createContext<ModalContextType>(initialModalContext);
 
 type ModalProviderProps = {
   children: React.ReactNode;
 };
 
 export function ModalProvider({ children }: ModalProviderProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [activeModal, setActiveModal] = useState<string | null>(null);
 
-  const openModal = () => {
-    setIsOpen(true);
+  const openModal = (modalName: string) => {
+    setActiveModal(modalName);
   };
 
   const closeModal = () => {
-    setIsOpen(false);
+    setActiveModal(null);
   };
 
   return (
-    <ModalContext.Provider value={{ isOpen, openModal, closeModal }}>
+    <ModalContext.Provider value={{ activeModal, openModal, closeModal }}>
       {children}
     </ModalContext.Provider>
   );
