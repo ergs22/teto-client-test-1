@@ -28,8 +28,8 @@ const organizeMessagesByDate = (
         .toString()
         .split("T")[0]
     ) {
-      if (!sortedData.yesterday) {
-        sortedData.yesterday = { messages: [] };
+      if (!sortedData.yesterday.messages) {
+        sortedData.yesterday.messages = [];
       }
       if (!messageExists(sortedData.yesterday.messages, msg._id)) {
         sortedData.yesterday.messages.push(msg);
@@ -52,8 +52,8 @@ const organizeMessagesByDate = (
     }
     // Para mensajes más antiguos
     else {
-      if (!sortedData.older) {
-        sortedData.older = { messages: [] };
+      if (!sortedData.older.messages) {
+        sortedData.older.messages = [];
       }
       if (!messageExists(sortedData.older.messages, msg._id)) {
         sortedData.older.messages.push(msg);
