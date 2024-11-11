@@ -1,5 +1,3 @@
-import { ObjectId } from "bson";
-
 export interface ButtonProps {
   text: string;
   styl: string;
@@ -37,7 +35,7 @@ export interface ChatMessage {
   sender: string;
   message: string;
   timestamp: string; // ISO 8601 string
-  _id?: ObjectId | string; // Change from string to ObjectId
+  _id?: string; // Change from string to ObjectId
 }
 
 export interface Chat {
