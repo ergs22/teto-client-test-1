@@ -51,6 +51,7 @@ export default function Page() {
         scrollToBottom();
     }, [messagesToDisplay]);
 
+
     useEffect(() => {
         if (messagesOld.length === 0) {
             setMessagesToDisplay(messages)
@@ -58,6 +59,8 @@ export default function Page() {
             setMessagesToDisplay(messagesOld)
         }
     }, [messages, messagesOld]);
+
+
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.matchMedia("(max-width: 768px)").matches);
@@ -72,6 +75,7 @@ export default function Page() {
         // Limpieza del evento al desmontar el componente
         return () => window.removeEventListener("resize", handleResize);
     }, []);
+
     return (
         <section className="flex w-screen h-screen">
             <ModalShare />

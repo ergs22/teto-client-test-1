@@ -47,13 +47,13 @@ const ModalChat = ({ messages, UserDetails }: any) => {
 
     useEffect(() => {
         fetchChatHistory();
-    }, []);
+    }, [UserDetails._id]);
 
     useEffect(() => {
         updateSortedChat(messages)
     }, [messages]);
 
-    return (<div className="bg-hero hidden h-screen py-8  px-8 z-50 fixed flex-col justify-between w-[60vw] md:w-[33.5vw] lg:w-[23.5vw]" style={showModal}>
+    return (<div className="bg-hero hidden h-screen py-8 px-2 z-50 fixed flex-col justify-between w-[60vw] md:w-[33.5vw] lg:w-[23.5vw]" style={showModal}>
         <div className=" flex items-center justify-between w-full ">
             <div className='flex items-center '>
                 <p className=" text-green-3 mr-2 max-[50%]">{UserDetails === undefined ? "User" : UserDetails?.username}</p>

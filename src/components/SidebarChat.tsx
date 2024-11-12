@@ -38,11 +38,12 @@ const SidebarChat = ({ messages, UserDetails }: any) => {
 
     useEffect(() => {
         fetchChatHistory();
-    }, []);
+    }, [UserDetails._id]);
 
     useEffect(() => {
         updateSortedChat(messages)
     }, [messages]);
+
     return (
         <div className="h-screen md:flex flex-col justify-between items-end z-30 hidden bg-hero-1 w-[45vw] md:w-[40vw] lg:w-[25vw] py-4 px-6">
             <div className="flex items-center justify-end w-full h-[10%] ">

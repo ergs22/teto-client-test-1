@@ -22,27 +22,29 @@ const useChat = (userData: UserData) => {
 
   // Función para obtener el historial de chat
   const fetchChatHistory = useCallback(async () => {
-    setLoader(true);
-    try {
-      const response = await axios.get(
-        `/api/users/chatdata?userId=${userData._id}`
-      );
+    if (userData._id) {
+      setLoader(true);
+      try {
+        const response = await axios.get(
+          `/api/users/chatdata?userId=${userData._id}`
+        );
 
-      if (response.data && response.data.chats) {
-        addSortedChat(response.data.chats);
+        if (response.data && response.data.chats) {
+          addSortedChat(response.data.chats);
 
-        const sortedData = sortDataChats(response.data.chats);
-        /*probar con menzaje hoy - pendiente con el getUnique*/
-        if (sortedData.today) {
-          addMessage(sortedData.today.messages);
+          const sortedData = sortDataChats(response.data.chats);
+          /*probar con menzaje hoy - pendiente con el getUnique*/
+          if (sortedData.today) {
+            addMessage(sortedData.today.messages);
+          }
         }
+      } catch (error) {
+        console.error("Error recuperando el historial del chat:", error);
+      } finally {
+        setLoader(false);
       }
-    } catch (error) {
-      console.error("Error recuperando el historial del chat:", error);
-    } finally {
-      setLoader(false);
     }
-  }, []);
+  }, [userData._id]);
 
   // Enviar mensaje
   const sendMessage = useCallback(async () => {
