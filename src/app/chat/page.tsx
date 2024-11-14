@@ -25,7 +25,7 @@ export default function Page() {
     const [isMobile, setIsMobile] = useState(false);
 
     const styles = {
-        backgroundColor: loader ? '#d0cfcf' : '#F4F4F4',
+        backgroundColor: loader ? '#d0cfcf' : '#f0f0f0',
     };
 
     // Manejar el evento de presionar "Enter"
@@ -88,9 +88,9 @@ export default function Page() {
             <main className="w-[100vw] md:w-[80vw] h-screen flex flex-col justify-between">
                 <div className="h-[5%] flex justify-between pr-8 pl-4 py-10 items-center md:pr-10 md:pl-10">
                     <div onClick={() => openModal("chat")} className="cursor-pointer md:hidden block hover:bg-gray-200 p-2 hover:rounded-full">
-                        <Image src="/icons/barra-de-menus.png" alt="nav-hamb" height={32} width={32} />
+                        <Image src="/icons/barra-de-menus-2.png" alt="nav-hamb" height={32} width={32} />
                     </div>
-                    <h1 className="text-lg font-medium">Tetobot</h1>
+                    <h1 className="text-lg text-[#5D5D5D]">Tetobot</h1>
                     <button onClick={() => openModal("share")}>
                         <Image width={24} height={24} alt="share" src="/icons/share.png" />
                     </button>
@@ -111,13 +111,13 @@ export default function Page() {
                         onKeyDown={handleEnter}
                         onChange={handleValue}
                         placeholder="Envia un mensaje a Tetobot"
-                        className="resize-none pl-6 place-content-center outline-none h-[50%] md:h-[63%] rounded-full w-[90%] md:w-[85%] lg:w-[75%] overflow-y-hidden pr-12"
+                        className="bg-gray-200 resize-none placeholder:text-[#5D5D5D] placeholder:font-normal placeholder:text-sm pl-6 place-content-center text-sm font-normal outline-none h-[50%] md:h-[63%] rounded-full w-[90%] md:w-[85%] lg:w-[75%] overflow-y-hidden pr-12"
                     />
-                    <button disabled={loader} onClick={sendMessage} type="submit" className="absolute z-20 right-[8.5%] md:right-[10%] lg:right-[15%]">
+                    <button disabled={loader || input.trim() === ''} onClick={sendMessage} type="submit" className="absolute z-20 right-[8.5%] md:right-[10%] lg:right-[15%]">
                         {loader ? (
                             <ThreeCircles visible={true} height="25" width="25" color="#F7F7F7" ariaLabel="three-circles-loading" />
                         ) : (
-                            <Image width={20} height={20} alt="submit" src="/icons/message.png" />
+                            <Image width={20} height={20} alt="submit" src={input.trim() === '' ? "/icons/message.png" : "/icons/message-2.png"} />
                         )}
                     </button>
                 </div>

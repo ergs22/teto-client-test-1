@@ -16,8 +16,10 @@ const NavBar = () => {
         }
     };
     return (
-        <nav className="bg-white text-base min-h-16 px-[5%] flex py-2  justify-between items-center">
-            <div className="flex items-center w-36 h-12 "> <Image src="/images/logo-1.png" alt="logo" height={250} width={250} /></div>
+        <nav className={`bg-white text-base min-h-16 z-50 px-[5%] flex py-2 justify-between items-center ${activeModal === "home" ? "fixed w-screen" : "relative"}`}>
+            <div className="flex items-center w-36 h-12 ">
+                <Image src="/images/logo-1.png" alt="logo" height={250} width={250} />
+            </div>
             <div className=" cursor-pointer lg:hidden block" onClick={toggleModal}> <Image src="/icons/barra-de-menus.png" alt="logo" height={35} width={35} /></div>
             <div className="items-center hidden lg:flex ">
                 <a href="#about-us" className=" text-black-2 px-4 hover:text-green-3">Sobre teto</a>

@@ -24,10 +24,10 @@ const ModalShare = () => {
       className="w-[100vw] h-screen bg-black justify-center items-center bg-opacity-30 flex flex-col fixed z-50"
       style={showModal}
     >
-      <div className="w-[80vw] sm:w-[60vw] lg:w-[40vw] xl:w-[40vw] bg-white rounded-xl px-8 py-5">
+      <div className="max-w-[90vw] sm:max-w-[80vw] md:max-w-[22rem] lg:max-w-[32vw] xl:max-w-[28vw] bg-white rounded-xl px-4 py-5">
         <div className="flex justify-between items-center mb-4">
-          <p>Enlace público del sitio web</p>
-          <div className="" onClick={closeModal}>
+          <p className="text-sm">Enlace público del sitio web</p>
+          <div onClick={closeModal}>
             <Image
               className="cursor-pointer"
               width={20}
@@ -37,12 +37,13 @@ const ModalShare = () => {
             />
           </div>
         </div>
-        <div className="flex justify-between items-center border-gray-7 border rounded-full py-[0.35rem] pl-4 pr-[0.35rem]">
-          <p className="overflow-hidden text-gray-6  whitespace-nowrap text-ellipsis w-[60%]"> {/* Cambios aquí */}
+        <div className="flex justify-between items-center border-gray-7 border rounded-full py-1 pl-3 pr-2">
+          <p className="overflow-hidden text-gray-6 whitespace-nowrap text-ellipsis w-[60%] text-sm">
             {url}
-          </p>          <button
+          </p>
+          <button
             onClick={copyToClipboard}
-            className="bg-green-b rounded-full py-[0.70rem] px-3 text-green-3"
+            className="bg-green-b rounded-full py-2 px-3 text-green-3 text-sm"
           >
             {buttonText}
           </button>

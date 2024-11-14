@@ -33,7 +33,7 @@ const UseCase = () => {
 
     }]
     return (
-        <section id="case-use" className=" p-5% flex flex-col items-center text-center">
+        <section id="case-use" className=" p-5% pb-10 flex flex-col items-center text-center">
             <h1 className=" text-black-1 text-[2.5rem] md:w-auto lg:w-[60%] mb-8 font-medium" data-aos="fade-up">Solución integral para <span className=" text-green-3">manejar la ansiedad</span></h1>
             <div className="flex flex-wrap justify-center">
                 {data.map((el, index) =>

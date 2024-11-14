@@ -46,11 +46,11 @@ const SidebarChat = ({ messages, UserDetails }: any) => {
 
     return (
         <div className="h-screen md:flex flex-col justify-between items-end z-30 hidden bg-hero-1 w-[45vw] md:w-[40vw] lg:w-[25vw] py-4 px-6">
-            <div className="flex items-center justify-end w-full h-[10%] ">
-                <p className="text-green-3 mr-2 max-[50%]">{UserDetails.username || "User"}</p>
+            <div className="flex items-center justify-start w-full h-[10%] ">
                 <div className="bg-[#87CEEB] rounded-full overflow-hidden">
                     <Image src="/images/profile-picture-user-m.png" alt="profile-picture" width={40} height={40} />
                 </div>
+                <p className="text-green-3 ml-2 max-[50%] text-sm">{UserDetails.username || "User"}</p>
 
             </div>
 
@@ -60,7 +60,7 @@ const SidebarChat = ({ messages, UserDetails }: any) => {
                         {/* Hoy */}
                         {sortedChat.today && sortedChat.today.messages.length > 0 && (
                             <div className="mb-6 overflow-hidden w-full text-green-3 ">
-                                <h2>Hoy</h2>
+                                <h2 className="text-xm font-semibold">Hoy</h2>
                                 <p onClick={() => handleCliChat(sortedChat.today)} className="cursor-pointer text-sm whitespace-nowrap py-2 px-2 rounded-md hover:bg-green-3 hover:text-green-b">
                                     {getLastMessage(sortedChat.today.messages)}
                                 </p>
@@ -70,7 +70,7 @@ const SidebarChat = ({ messages, UserDetails }: any) => {
                         {/* Ayer */}
                         {sortedChat.yesterday && sortedChat.yesterday.messages.length > 0 && (
                             <div className="mb-6 overflow-hidden w-full text-green-3 ">
-                                <h2>Ayer</h2>
+                                <h2 className="text-xs font-semibold">Ayer</h2>
                                 <p onClick={() => handleCliChat(sortedChat.yesterday)} className="cursor-pointer text-sm whitespace-nowrap py-2 px-2 rounded-md hover:bg-green-3 hover:text-green-b">
                                     {getLastMessage(sortedChat.yesterday.messages)}
                                 </p>
@@ -80,7 +80,7 @@ const SidebarChat = ({ messages, UserDetails }: any) => {
                         {/* Últimos 7 días */}
                         {sortedChat.last7Days && sortedChat.last7Days.messages.length > 0 && (
                             <div className="mb-6 overflow-hidden w-full text-green-3 ">
-                                <h2>Últimos 7 días</h2>
+                                <h2 className="text-xs font-semibold">Últimos 7 días</h2>
                                 <p onClick={() => handleCliChat(sortedChat.last7Days)} className="cursor-pointer text-sm whitespace-nowrap py-2 px-2 rounded-md hover:bg-green-3 hover:text-green-b">
                                     {getLastMessage(sortedChat.last7Days.messages)}
                                 </p>
@@ -90,7 +90,7 @@ const SidebarChat = ({ messages, UserDetails }: any) => {
                         {/* Últimos 30 días */}
                         {sortedChat.last30Days && sortedChat.last30Days.messages.length > 0 && (
                             <div className="mb-6 overflow-hidden w-full text-green-3 ">
-                                <h2>Últimos 30 días</h2>
+                                <h2 className="text-xs font-semibold" >Últimos 30 días</h2>
                                 <p onClick={() => handleCliChat(sortedChat.last30Days)} className="cursor-pointer text-sm whitespace-nowrap  py-2 px-2 rounded-md hover:bg-green-3 hover:text-green-b">
                                     {getLastMessage(sortedChat.last30Days.messages)}
                                 </p>
@@ -100,7 +100,7 @@ const SidebarChat = ({ messages, UserDetails }: any) => {
                         {/* Más antiguos */}
                         {sortedChat.older && sortedChat.older.messages.length > 0 && (
                             <div className="mb-6 overflow-hidden w-full text-green-3 ">
-                                <h2>Antiguos</h2>
+                                <h2 className="text-xs font-semibold" >Antiguos</h2>
                                 <p onClick={() => handleCliChat(sortedChat.older)} className="cursor-pointer text-sm whitespace-nowrap py-2 px-2 rounded-md hover:bg-green-3 hover:text-green-b">
                                     {getLastMessage(sortedChat.older.messages)}
                                 </p>
@@ -114,7 +114,7 @@ const SidebarChat = ({ messages, UserDetails }: any) => {
                 <div onClick={logout} className="cursor-pointer">
                     <Image src="/icons/logout.png" alt="logout" width={30} height={30} />
                 </div>
-                <p onClick={logout} className="ml-2 cursor-pointer text-green-3">Salir</p>
+                <p onClick={logout} className="ml-2 cursor-pointer text-green-3 text-sm">Salir</p>
             </div>
         </div>
     );

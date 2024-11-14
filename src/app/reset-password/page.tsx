@@ -85,7 +85,7 @@ export default function Page() {
     };
 
     return (
-        <section className="min-h-screen bg-hero-pattern bg-size-hero bg-position-hero p-5% pt-4 pb-8">
+        <section className="min-h-screen bg-hero-pattern bg-size-hero p-5% pt-4 pb-8">
             <div className="w-full flex justify-between items-center">
                 <Link href="/">
                     <Image alt="logo" height={150} width={150} src="/images/logo-1.png" />
