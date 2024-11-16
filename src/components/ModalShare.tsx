@@ -21,7 +21,7 @@ const ModalShare = () => {
 
   return (
     <section
-      className="w-[100vw] h-screen bg-black justify-center items-center bg-opacity-30 flex flex-col fixed z-50"
+      className="w-[100vw] h-dvh bg-black justify-center items-center bg-opacity-30 flex flex-col fixed z-50"
       style={showModal}
     >
       <div className="max-w-[90vw] sm:max-w-[80vw] md:max-w-[22rem] lg:max-w-[32vw] xl:max-w-[28vw] bg-white rounded-xl px-4 py-5">

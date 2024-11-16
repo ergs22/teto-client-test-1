@@ -45,7 +45,7 @@ export default function Page() {
                 <Link href="/"><Image alt="logo" height={150} width={150} src="/images/logo-1.png" /></Link>
             </div>
             <div className="min-h-[80vh] flex justify-center items-center mt-6">
-                <div className=" rounded-lg-exten bg-hero-1 w-[85vw] sm:w-[70vw] lg:w-[40vw] px-2 sm:px-8 lg:px-8 pb-8 pt-4 h-[28rem] flex flex-col items-center justify-around text-center">
+                <div className=" rounded-lg-exten bg-hero-1 w-[85vw] sm:w-[70vw] lg:w-[40vw] px-2 sm:px-8 lg:px-8 pb-8 pt-4 min-h-[28rem] flex flex-col items-center justify-around text-center">
                     <h1 className="text-4xl md:text-5xl font-medium mb-4">Inicia sesión</h1>
                     <p>Inicia sesión y comienza a utilizar Tetobot</p>
                     <div className="flex flex-col w-full">
@@ -67,7 +67,7 @@ export default function Page() {
                         />
                         {errors.password && <span className="text-red-600 text-left">Este campo es obligatorio</span>}
 
-                        <button type="submit" className="buttonB2 my-6 flex justify-center items-center" onClick={handleSubmit(onLogin)}>    {loading ? (
+                        <button type="submit" disabled={loading} className={`buttonB2 my-6 flex justify-center items-center ${loading ? 'opacity-90' : ''}`} onClick={handleSubmit(onLogin)}>    {loading ? (
                             <ThreeCircles visible={true} height="25" width="25" color="#F7F7F7" ariaLabel="three-circles-loading" />
                         ) : "Iniciar sesión"}</button>
                         <div className="w-full flex justify-center items-center">
@@ -79,6 +79,6 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }

@@ -12,6 +12,7 @@ export async function POST(request: NextRequest) {
     const { email } = reqBody;
 
     const user = await User.findOne({ email });
+
     if (!user) {
       return NextResponse.json(
         { error: "No se encontró un usuario con ese correo electrónico" },

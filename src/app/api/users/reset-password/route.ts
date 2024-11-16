@@ -2,6 +2,7 @@ import { connect } from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
+import { sendEmail } from "@/helpers/mailer";
 
 connect();
 
@@ -16,6 +17,13 @@ export async function POST(request: NextRequest) {
     });
 
     if (!user) {
+      // Envía un correo con el token de restablecimiento
+      await sendEmail({
+        email: user.email,
+        emailType: "RESET",
+        userId: user._id,
+      });
+
       return NextResponse.json(
         { error: "Token inválido o expirado" },
         { status: 400 }
@@ -28,8 +36,8 @@ export async function POST(request: NextRequest) {
 
     // Actualizar la contraseña del usuario
     user.password = hashedPassword;
-    user.forgotPasswordToken = undefined; // Eliminar el token usado
-    user.forgotPasswordTokenExpiry = undefined;
+    // user.forgotPasswordToken = undefined; // Eliminar el token usado
+    // user.forgotPasswordTokenExpiry = undefined;
 
     await user.save();
 

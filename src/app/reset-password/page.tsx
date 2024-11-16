@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { ThreeCircles } from "react-loader-spinner";
 
 export default function Page() {
     const router = useRouter();
@@ -18,7 +19,6 @@ export default function Page() {
     });
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const [buttonDisabled, setButtonDisabled] = useState(false);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -42,7 +42,6 @@ export default function Page() {
 
             if (response.data.success) {
                 toast.success("Correo de recuperación enviado. Revisa tu bandeja de entrada.");
-                router.push("/login");
             } else {
                 toast.error(response.data.error || "Algo salió mal, inténtalo de nuevo.");
             }
@@ -133,11 +132,13 @@ export default function Page() {
                     )}
                     <button
                         type="submit"
-                        className="buttonB2 my-6"
+                        className={`buttonB2 my-6 flex justify-center items-center ${loading ? 'opacity-90' : ''}`}
                         onClick={handleSubmit(token ? onResetPassword : onRequestReset)}
-                        disabled={buttonDisabled || loading}
+                        disabled={loading}
                     >
-                        {loading ? "Enviando..." : token ? "Restablecer contraseña" : "Enviar"}
+                        {loading ? (
+                            <ThreeCircles visible={true} height="25" width="25" color="#F7F7F7" ariaLabel="three-circles-loading" />
+                        ) : token ? "Restablecer contraseña" : "Enviar"}
                     </button>
                     <div className="w-full flex justify-center items-center">
                         <p>

@@ -12,7 +12,7 @@ const ModalHome = () => {
 
 
     return (
-        <section className={`w-screen z-50 h-screen bg-[#F4F8FB] flex flex-col fixed top-16 pt-2 transition-transform duration-700 ease-in-out ${showModal ? 'translate-y-0' : '-translate-y-[110%]'}`}>
+        <section className={`w-screen z-50 h-dvh bg-[#F4F8FB] flex flex-col fixed top-16 pt-2 transition-transform duration-700 ease-in-out ${showModal ? 'translate-y-0' : '-translate-y-[110%]'}`}>
             <div className='flex flex-col font-medium text-lg w-full'  >
                 <a href="#about-us" className=" text-black-2 py-4 px-4 hover:bg-green-3 ">Sobre teto</a>
                 <a href="#case-use" className=" text-black-2 py-4  px-4 hover:bg-green-3">Cómo puede ayudarte</a>

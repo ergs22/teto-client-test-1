@@ -54,7 +54,7 @@ const ModalChat = ({ messages, UserDetails }: any) => {
     }, [messages]);
 
     return (
-        <div className="w-[100vw] h-screen bg-[#fafafa80] items-start flex flex-col fixed z-50" style={showModal}
+        <div className="w-[100vw] h-dvh bg-[#fafafa80] items-start flex flex-col fixed z-50" style={showModal}
         >
             <nav className="bg-hero h-screen py-3 px-3 w-72 flex flex-col border-r border-gray-500 border-opacity-15 shadow-lg">
                 {/* Parte Superior */}
