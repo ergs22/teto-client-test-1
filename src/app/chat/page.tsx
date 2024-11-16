@@ -77,7 +77,7 @@ export default function Page() {
     }, []);
 
     return (
-        <section className="flex w-screen h-screen">
+        <section className="flex w-screen h-dvh">
             <ModalShare />
             {/* Renderizar solo uno de los dos componentes según el tamaño de pantalla */}
             {isMobile ? (
@@ -85,7 +85,7 @@ export default function Page() {
             ) : (
                 <SidebarChat messages={messages} UserDetails={userData} />
             )}
-            <main className="w-[100vw] md:w-[80vw] h-screen flex flex-col justify-between">
+            <main className="w-[100vw] md:w-[80vw] h-full flex flex-col justify-between">
                 <div className="h-[5%] flex justify-between pr-8 pl-4 py-10 items-center md:pr-10 md:pl-10">
                     <div onClick={() => openModal("chat")} className="cursor-pointer md:hidden block hover:bg-gray-200 p-2 hover:rounded-full">
                         <Image src="/icons/barra-de-menus-2.png" alt="nav-hamb" height={32} width={32} />
@@ -111,7 +111,7 @@ export default function Page() {
                         onKeyDown={handleEnter}
                         onChange={handleValue}
                         placeholder="Envia un mensaje a Tetobot"
-                        className="bg-gray-200 resize-none placeholder:text-[#5D5D5D] placeholder:font-normal placeholder:text-sm pl-6 place-content-center text-sm font-normal outline-none h-[50%] md:h-[63%] rounded-full w-[90%] md:w-[85%] lg:w-[75%] overflow-y-hidden pr-12"
+                        className="bg-gray-200 resize-none placeholder:text-[#5D5D5D] placeholder:font-normal placeholder:text-sm pl-6 place-content-center text-sm font-normal outline-none h-[3.2rem] rounded-full w-[90%] md:w-[85%] lg:w-[75%] overflow-y-hidden pr-12"
                     />
                     <button disabled={loader || input.trim() === ''} onClick={sendMessage} type="submit" className="absolute z-20 right-[8.5%] md:right-[10%] lg:right-[15%]">
                         {loader ? (
