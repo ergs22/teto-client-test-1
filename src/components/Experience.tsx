@@ -1,44 +1,44 @@
 import CardExp from "./CardExp";
 const Experience = () => {
     const users = [{
-        name: "Carlo Andres",
+        name: "Christian Cumana",
         pais: "Venezuela",
-        parraf: "Me hizo sentir de maravilla, al rato ya estaba calmado.",
-        img: "/images/profile-picture-6.jpg"
+        parraf: "Para alguien como yo, que no habla mucho de lo que siente, es un buen desahogo. No te soluciona la vida pero ayuda bastante cuando necesitas orientación o simplemente sentir que alguien entiende tu problema.",
+        img: "/images/profile-picture-6.png"
 
     }, {
-        name: "Rafael Martínez",
-        pais: "México",
-        parraf: "¡Tetobot ha sido una verdadera bendición! Siempre está ahí para escucharme y brindarme estrategias efectivas para manejar mi ansiedad.",
-        img: "/images/profile-picture-5.png"
+        name: "Gabriel Romero",
+        pais: "Venezuela",
+        parraf: "Me gusto mucho, la verdad no digo que sea una solución mágica, pero ayuda bastante. Me hizo pensar en cosas que ni yo habia notado sobre mi ansiedad. Me gustaría que en el futuro tuviera más opciones.",
+        img: "/images/profile-picture-5.jpeg"
 
     },
     {
-        name: "Solangel Fernández",
-        pais: "Argentina",
-        parraf: "Gracias a Tetobot, he aprendido a entender mejor mis emociones y a desarrollar habilidades de afrontamiento que han mejorado mi bienestar general.",
+        name: "Alicia Castañeda",
+        pais: "Venezuela",
+        parraf: "Me encanta que es facil de usar. Como consejo deben priorizar la conexión porque uno se estresa más si tarda en responder.",
         img: "/images/profile-picture-4.png"
 
     },
     {
-        name: "Isabela Gómez",
-        pais: "Colombia",
-        parraf: "Tetobot es más que un simple chatbot, es un amigo virtual que me ha acompañado en los momentos más difíciles. Su apoyo emocional ha sido invaluable.",
-        img: "/images/profile-picture-3.png"
+        name: "Ezeth Pérez",
+        pais: "Venezuela",
+        parraf: "He probado anteriormente una IA, he usado Replika, durante mis crisis me ayudó. Probé Tetobot, para ser un proyecto realizado por un joven me parecio novedoso, comparado con Replika a un es un bebé.",
+        img: "/images/profile-picture-3.jpeg"
 
     },
     {
-        name: "Mateo Sánchez",
-        pais: "Perú",
-        parraf: "Gracias a la psicoeducación de Tetobot, ahora entiendo mejor los trastornos de ansiedad y cuento con las herramientas necesarias para manejarlos.",
-        img: "/images/profile-picture-2.png"
+        name: "Sergio Guillen",
+        pais: "Venezuela",
+        parraf: "Es una herramienta novedosa para nosotros los que sufrimos de ansiedad. Con respecto a los detalles, en ocasiones no entendia a que te referías, habia que especificarle con mas detalles, pero en si es una aplicación funcional, cumple con lo dicho.",
+        img: "/images/profile-picture-2.jpeg"
 
     },
     {
-        name: "Valentina Ramírez",
-        pais: "Chile",
-        parraf: "Tetobot ha sido un compañero fundamental en mi proceso de crecimiento personal. Sus conversaciones de autoayuda me han ayudado a reflexionar y a encontrar mi propio camino.",
-        img: "/images/profile-picture-1.png"
+        name: "Angel Tapias",
+        pais: "Venezuela",
+        parraf: "Yo he pasado por terapia, y aunque sé que esto no reemplaza a un psicólogo, la verdad es que es un buen complemento. Hay dias en que necesito alguien con quien hablar y Teto es una opción util. Me da datos interesantes y estrategias que me han servido.",
+        img: "/images/profile-picture-1.jpeg"
     }]
     return (
         <section id="experience" className=" p-5% py-16 flex flex-col items-center">
