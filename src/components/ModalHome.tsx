@@ -20,8 +20,8 @@ const ModalHome = () => {
                 <a href="#FQAs" className=" text-black-2 py-4 px-4 hover:bg-green-3">FQAs</a>
             </div>
             <div className=' flex flex-col px-4 mt-8'>
-                <ButtonStand url="login" styl="buttonA w-full h-[3.2rem]" text="Registrarse" />
-                <ButtonStand url="signup" styl="buttonBM w-full h-[3.2rem]" text="Iniciar sesion" />
+                <ButtonStand url="signup" styl="buttonA w-full h-[3.2rem]" text="Registrarse" />
+                <ButtonStand url="login" styl="buttonBM w-full h-[3.2rem]" text="Iniciar sesion" />
             </div>
         </section>
 
