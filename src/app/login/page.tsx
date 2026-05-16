@@ -1,0 +1,84 @@
+"use client";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import axios from "axios"; // Asegúrate de importar AxiosError
+import { useState } from "react";
+import toast from "react-hot-toast";
+import Image from "next/image";
+import { useForm } from 'react-hook-form';
+import { LoginData } from "@/types/types";
+import { ThreeCircles } from "react-loader-spinner";
+
+export default function Page() {
+    const router = useRouter();
+    const { register, handleSubmit, formState: { errors } } = useForm<LoginData>();
+    const [loading, setLoading] = useState(false);
+
+    const onLogin = async (data: LoginData) => {
+        try {
+            setLoading(true);
+            await axios.post("/api/users/login", data);
+            toast.success("Inicio exitoso");
+            router.push("/chat");
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                // Ahora puedes acceder a las propiedades de AxiosError
+                error.response ? toast.error(error.response.data.error) : toast.error("Ocurrió un error inesperado");
+            } else {
+                // Manejo de otros tipos de errores
+                toast.error("Ocurrió un error inesperado");
+            }
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    const handleEnter = async (e: any) => {
+        if (e.key === 'Enter') {
+            await handleSubmit(onLogin)();
+        }
+    }
+
+    return (
+        <section className="min-h-screen bg-hero-pattern bg-size-hero  p-5% pt-4 pb-8">
+            <div className="w-full flex h-[10vh] justify-between items-center">
+                <Link href="/"><Image alt="logo" height={150} width={150} src="/images/logo-1.png" /></Link>
+            </div>
+            <div className="min-h-[80vh] flex justify-center items-center mt-6">
+                <div className=" rounded-lg-exten bg-hero-1 w-[85vw] sm:w-[70vw] lg:w-[40vw] px-2 sm:px-8 lg:px-8 pb-8 pt-4 min-h-[28rem] flex flex-col items-center justify-around text-center">
+                    <h1 className="text-4xl md:text-5xl font-medium mb-4">Inicia sesión</h1>
+                    <p>Inicia sesión y comienza a utilizar Tetobot</p>
+                    <div className="flex flex-col w-full">
+                        <input
+                            {...register("email", { required: true })}
+                            placeholder="Correo electronico"
+                            className="inputA"
+                            type="text"
+                            onKeyDown={handleEnter}
+                        />
+                        {errors.email && <span className="text-red-600 text-left">Este campo es obligatorio</span>}
+
+                        <input
+                            {...register("password", { required: true })}
+                            placeholder="Contraseña"
+                            className="inputA"
+                            type="password"
+                            onKeyDown={handleEnter}
+                        />
+                        {errors.password && <span className="text-red-600 text-left">Este campo es obligatorio</span>}
+
+                        <button type="submit" disabled={loading} className={`buttonB2 my-6 flex justify-center items-center ${loading ? 'opacity-90' : ''}`} onClick={handleSubmit(onLogin)}>    {loading ? (
+                            <ThreeCircles visible={true} height="25" width="25" color="#F7F7F7" ariaLabel="three-circles-loading" />
+                        ) : "Iniciar sesión"}</button>
+                        <div className="w-full flex justify-center items-center">
+                            <p>¿No tienes una cuenta?<Link href="/signup" className="underline"> Únete</Link></p>
+                        </div>
+                        <div className="w-full flex justify-center items-center mt-4">
+                            <Link href="/reset-password" className="underline">¿Olvidaste tu contraseña?</Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section >
+    );
+}
