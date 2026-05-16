@@ -1,20 +1,46 @@
 import mongoose from "mongoose";
 
-export async function connect() {
-  try {
-    mongoose.connect(process.env.MONGO_URL!);
-    const connection = mongoose.connection;
-    connection.on("connected", () => {
-      // console.log("MongoDB connected succesfull");
-    });
-    connection.on("error", (err) => {
-      // console.log(
-      //   "MongoDB connection error. Please make sure MongoDB is running." + err
-      // );
-      process.exit();
-    });
-  } catch (error) {
-    console.log("something goes wrong");
-    console.log(error);
-  }
+const MONGO_URL = process.env.MONGO_URL;
+
+if (!MONGO_URL) {
+  throw new Error(
+    "Por favor, define la variable MONGO_URL en tus variables de entorno",
+  );
 }
+
+declare global {
+  var mongoose:
+    | {
+        conn: mongoose.Connection | null;
+        promise: Promise<mongoose.Connection> | null;
+      }
+    | undefined;
+}
+
+// 2. Asignamos o inicializamos el contenedor en el objeto global
+let cached = globalThis.mongoose;
+
+if (!cached) {
+  cached = globalThis.mongoose = { conn: null, promise: null };
+}
+
+async function connect() {
+  if (cached!.conn) {
+    return cached!.conn;
+  }
+
+  if (!cached!.promise) {
+    const opts = {
+      bufferCommands: false,
+    };
+
+    cached!.promise = mongoose
+      .connect(MONGO_URL!, opts)
+      .then((m) => m.connection);
+  }
+
+  cached!.conn = await cached!.promise;
+  return cached!.conn;
+}
+
+export default connect;

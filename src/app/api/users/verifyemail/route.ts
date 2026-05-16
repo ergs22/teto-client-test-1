@@ -1,4 +1,4 @@
-import { connect } from "@/dbConfig/dbConfig";
+import connect from "@/dbConfig/dbConfig";
 import { sendEmail } from "@/helpers/mailer";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
       });
       return NextResponse.json(
         { error: "Token expirado, se ha reenviado el correo de verificación." },
-        { status: 403 }
+        { status: 403 },
       );
     }
 

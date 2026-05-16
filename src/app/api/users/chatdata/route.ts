@@ -1,4 +1,4 @@
-import { connect } from "@/dbConfig/dbConfig";
+import connect from "@/dbConfig/dbConfig";
 import Chat from "@/models/chatModel";
 import { NextRequest, NextResponse } from "next/server";
 

@@ -1,4 +1,4 @@
-import { connect } from "@/dbConfig/dbConfig";
+import connect from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
         {
           error: "No hemos encontrado una cuenta con este correo electrónico.",
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
       // Mensaje más amigable para el usuario
       return NextResponse.json(
         { error: "La contraseña que ingresaste es incorrecta." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
       {
         error: "Ocurrió un error inesperado. Por favor, inténtalo nuevamente.",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

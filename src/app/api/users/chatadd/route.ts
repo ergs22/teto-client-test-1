@@ -1,4 +1,4 @@
-import { connect } from "@/dbConfig/dbConfig";
+import connect from "@/dbConfig/dbConfig";
 import Chat from "@/models/chatModel";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -27,14 +27,14 @@ export async function POST(request: NextRequest) {
       if (existingChat) {
         // Obtener los IDs de los mensajes existentes
         const existingMessageIds = existingChat.messages.map(
-          (msg: any) => msg._id
+          (msg: any) => msg._id,
         );
         // Filtrar los mensajes nuevos para no duplicar los ya existentes
         const filteredMessages = newMessages.filter(
           (message) =>
             !existingMessageIds.some((existingId: any) =>
-              existingId.equals(message._id)
-            )
+              existingId.equals(message._id),
+            ),
         );
 
         if (filteredMessages.length > 0) {

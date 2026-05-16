@@ -1,4 +1,4 @@
-import { connect } from "@/dbConfig/dbConfig";
+import connect from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
 
       return NextResponse.json(
         { error: "Token inválido o expirado" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
